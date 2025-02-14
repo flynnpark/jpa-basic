@@ -14,8 +14,12 @@ public class JpaMain {
         transaction.begin();
 
         try {
-            Member member = manager.find(Member.class, 1L);
-            member.setName("HelloB");
+            Member member = new Member();
+            member.setId(2L);
+            member.setUsername("B");
+            member.setRoleType(RoleType.ADMIN);
+
+            manager.persist(member);
 
             transaction.commit();
         } catch (Exception e) {
