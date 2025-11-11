@@ -15,15 +15,16 @@ public class JpaMain {
         tx.begin();
 
         try {
-            //            Member member = em.find(Member.class, 1L);
-            //            System.out.println("member.id= " + member.getId());
-            //            System.out.println("member.name" + member.getName());
-            //            member.setName("HelloJPA");
-
-            List<Member> members = em.createQuery("select m from Member as m", Member.class).getResultList();
-            for (Member member : members) {
-                System.out.println("member.name: " + member.getName());
-            }
+            // 비명속
+            Member member = new Member();
+            member.setId(1L);
+            member.setName("flynnpark");
+            // 영속
+            System.out.println("Before Persist");
+            em.persist(member);
+            // 준영속
+            em.detach(member);
+            System.out.println("After Persist");
 
             tx.commit();
         } catch (Exception e) {
