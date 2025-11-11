@@ -15,12 +15,11 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Member memberA = new Member(3L, "Alice");
-            Member memberB = new Member(4L, "Bob");
-            em.persist(memberA);
-            em.persist(memberB);
-            // 여기까지 INSERT SQL을 실행하지 않음
-            // 커밋하는 순간 INSERT SQL 실행
+            Member member = em.find(Member.class, 1L);
+            member.setName("flynnpark");
+
+            // em.update(member); // JPA에서는 필요 없음
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
