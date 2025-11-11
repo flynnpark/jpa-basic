@@ -15,16 +15,16 @@ public class JpaMain {
         tx.begin();
 
         try {
-            // 비명속
-            Member member = new Member();
-            member.setId(1L);
-            member.setName("flynnpark");
-            // 영속
-            System.out.println("Before Persist");
+            Member member = new Member(1L, "John Doe");
+            // 1차 캐시에 저장
             em.persist(member);
-            // 준영속
-            em.detach(member);
-            System.out.println("After Persist");
+
+            Member findMember1 = em.find(Member.class, 1L);// 1차 캐시에서 조회
+            Member findMember2 = em.find(Member.class, 2L);// DB에서 조회
+            Member findMember3 = em.find(Member.class, 2L);// 1차 캐시에서 조회
+            System.out.println("findMember1.name = " + findMember1.getName());
+            System.out.println("findMember2.name = " + findMember2.getName());
+            System.out.println("findMember2 == findMember3 = " + (findMember2 == findMember3));
 
             tx.commit();
         } catch (Exception e) {
