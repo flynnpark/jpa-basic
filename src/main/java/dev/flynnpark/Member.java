@@ -1,13 +1,15 @@
 package dev.flynnpark;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(uniqueConstraints = {@UniqueConstraint(name = "NAME_AGE_UNIQUE", columnNames = {"name", "age"})})
 public class Member {
     @Id
     private Long id;
+    @Column(nullable = false, length = 10)
     private String name;
+    private int age;
 
     public Member() {
     }
