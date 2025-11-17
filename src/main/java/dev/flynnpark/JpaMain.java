@@ -15,10 +15,17 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Member member = new Member(200L, "member200");
-            em.persist(member);
-            em.flush();
-            System.out.println("====================");
+            // 영속 상태
+            Member member = em.find(Member.class, 1L);
+            member.setName("AAA");
+
+            // 준영속 상태
+            em.detach(member);
+
+            // em.clear(); // 1차 캐시 전체 삭제
+            // em.close(); // 영속성 컨텍스트 종료
+
+            System.out.println("=============");
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
