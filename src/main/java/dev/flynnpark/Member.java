@@ -2,40 +2,22 @@ package dev.flynnpark;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
-
 @Entity
 @Table(uniqueConstraints = {@UniqueConstraint(name = "NAME_AGE_UNIQUE", columnNames = {"name", "age"})})
 public class Member {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name="name", nullable = false, length = 10)
-    private String username;
-
-    private int age;
-
-    @Enumerated(EnumType.STRING)
-    private RoleType roleType;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdDate;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date lastModifiedDate;
-
-    @Lob
-    private String description;
-
-    @Transient
-    private int temp;
+    private String name;
 
     public Member() {
     }
 
-    public Member(Long id, String username) {
+    public Member(Long id, String name) {
         this.id = id;
-        this.username = username;
+        this.name = name;
     }
 
     public Long getId() {
@@ -47,10 +29,10 @@ public class Member {
     }
 
     public String getName() {
-        return username;
+        return name;
     }
 
     public void setName(String username) {
-        this.username = username;
+        this.name = username;
     }
 }
