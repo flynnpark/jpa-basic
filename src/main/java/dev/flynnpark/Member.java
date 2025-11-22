@@ -3,7 +3,6 @@ package dev.flynnpark;
 import jakarta.persistence.*;
 
 @Entity
-@Table(uniqueConstraints = {@UniqueConstraint(name = "NAME_AGE_UNIQUE", columnNames = {"name", "age"})})
 public class Member {
     @Id @GeneratedValue
     @Column(name = "member_id")
@@ -12,8 +11,9 @@ public class Member {
     @Column(name = "username")
     private String username;
 
-    @Column(name = "team_id")
-    private Long teamId;
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    private Team team;
 
     public Long getId() {
         return id;
@@ -31,11 +31,11 @@ public class Member {
         this.username = username;
     }
 
-    public Long getTeamId() {
-        return teamId;
+    public Team getTeam() {
+        return team;
     }
 
-    public void setTeamId(Long teamId) {
-        this.teamId = teamId;
+    public void setTeam(Team team) {
+        this.team = team;
     }
 }
