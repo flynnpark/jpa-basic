@@ -23,13 +23,13 @@ public class JpaMain {
             member.setUsername("member1");
             member.setTeam(team);
             em.persist(member);
+
             em.flush();
             em.clear();
 
-            Member findMember = em.find(Member.class, member.getId());
-            List<Member> members = findMember.getTeam().getMembers();
+            List<Member> members = team.getMembers();
             for (Member m : members) {
-                System.out.println("m = " + m.getUsername());
+                System.out.println("member.username = " + m.getUsername());
             }
 
             tx.commit();
