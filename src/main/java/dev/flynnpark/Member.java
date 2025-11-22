@@ -5,20 +5,15 @@ import jakarta.persistence.*;
 @Entity
 @Table(uniqueConstraints = {@UniqueConstraint(name = "NAME_AGE_UNIQUE", columnNames = {"name", "age"})})
 public class Member {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue
+    @Column(name = "member_id")
     private Long id;
 
-    @Column(name="name", nullable = false, length = 10)
-    private String name;
+    @Column(name = "username")
+    private String username;
 
-    public Member() {
-    }
-
-    public Member(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    @Column(name = "team_id")
+    private Long teamId;
 
     public Long getId() {
         return id;
@@ -28,11 +23,19 @@ public class Member {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String username) {
-        this.name = username;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Long getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(Long teamId) {
+        this.teamId = teamId;
     }
 }

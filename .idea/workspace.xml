@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9404eb9-7c99-4e4e-9d4d-d9ee8802589e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/flynnpark/domain/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/flynnpark/domain/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/flynnpark/domain/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/flynnpark/domain/OrderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/flynnpark/domain/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/flynnpark/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/flynnpark/JpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/flynnpark/JpaMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/flynnpark/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/flynnpark/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/flynnpark/domain/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/flynnpark/domain/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/flynnpark/domain/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/flynnpark/domain/OrderItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/flynnpark/domain/OrderStatus.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
