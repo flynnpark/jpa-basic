@@ -13,7 +13,7 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "member_id")
-    private Member member;
+    private User member;
 
     @Column(name = "order_date")
     private String orderDate;
@@ -37,11 +37,11 @@ public class Order {
         this.id = id;
     }
 
-    public Member getMember() {
+    public User getMember() {
         return member;
     }
 
-    public void setMember(Member member) {
+    public void setMember(User member) {
         this.member = member;
     }
 

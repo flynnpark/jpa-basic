@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Member {
+public class User {
     @Id @GeneratedValue
     private Long id;
 

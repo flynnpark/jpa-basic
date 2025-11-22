@@ -12,7 +12,7 @@ public class Member {
     private String username;
 
     @ManyToOne
-    @JoinColumn(name = "team_id")
+    @JoinColumn(name="team_id", insertable = false, updatable = false)
     private Team team;
 
     public Long getId() {
