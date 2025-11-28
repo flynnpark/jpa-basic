@@ -2,19 +2,13 @@ package dev.flynnpark;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
-@Table(name = "product")
-public class Product {
+@Table(name = "product_item")
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn
+public class ProductItem {
     @Id @GeneratedValue
     private Long id;
-
-    private String name;
-
-    @OneToMany(mappedBy = "product")
-    private List<MemberProduct> members = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -31,4 +25,15 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    private String name;
+    private int price;
 }
