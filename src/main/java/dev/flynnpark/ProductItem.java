@@ -3,9 +3,9 @@ package dev.flynnpark;
 import jakarta.persistence.*;
 
 @Entity(name = "product_item")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @DiscriminatorColumn
-public class ProductItem {
+public abstract class ProductItem {
     @Id @GeneratedValue
     private Long id;
 
