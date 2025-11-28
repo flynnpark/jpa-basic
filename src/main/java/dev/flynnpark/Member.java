@@ -2,6 +2,9 @@ package dev.flynnpark;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Member {
     @Id @GeneratedValue
@@ -18,6 +21,10 @@ public class Member {
     @OneToOne
     @JoinColumn(name = "locker_id")
     private Locker locker;
+
+    @ManyToMany
+    @JoinTable(name="member_product")
+    private List<Product> products = new ArrayList<>();
 
     public Long getId() {
         return id;
