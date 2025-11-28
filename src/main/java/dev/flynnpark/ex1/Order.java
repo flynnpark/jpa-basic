@@ -15,6 +15,10 @@ public class Order {
     @JoinColumn(name = "member_id")
     private User member;
 
+    @OneToOne
+    @JoinColumn(name = "delivery_id")
+    private Delivery delivery;
+
     @Column(name = "order_date")
     private String orderDate;
 
