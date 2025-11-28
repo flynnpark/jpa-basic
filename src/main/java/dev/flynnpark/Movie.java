@@ -4,8 +4,7 @@ import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "movie")
+@Entity(name = "movie")
 @DiscriminatorValue("movie")
 public class Movie extends ProductItem {
     private String director;

@@ -2,9 +2,8 @@ package dev.flynnpark;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "product_item")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Entity(name = "product_item")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn
 public class ProductItem {
     @Id @GeneratedValue
