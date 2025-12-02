@@ -5,6 +5,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class JpaMain {
@@ -15,18 +16,16 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Movie newMovie = new Movie();
-            newMovie.setName("Inception");
-            newMovie.setPrice(15000);
-            newMovie.setDirector("Christopher Nolan");
-            System.out.println("Persisting Movie: " + newMovie.getName() + ", Director: " + newMovie.getDirector());
-            em.persist(newMovie);
+            Member member = new Member();
+            member.setUsername("member1");
+            member.setCreatedDate(LocalDateTime.now());
+            member.setModifiedDate(LocalDateTime.now());
 
             em.flush();
             em.clear();
 
-            Movie foundMovie = em.find(Movie.class, newMovie.getId());
-            System.out.println("Movie Director: " + foundMovie.getDirector());
+            Member foundMember = em.find(Member.class, member.getId());
+            System.out.println("Member Created Date: " + foundMember.getCreatedDate());
 
             tx.commit();
         } catch (Exception e) {
