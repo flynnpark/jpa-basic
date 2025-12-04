@@ -21,7 +21,7 @@ public abstract class Item extends BaseEntity {
     @Column(name = "stock_quantity")
     private Integer stockQuantity;
 
-    @ManyToMany(mappedBy = "items")
+    @ManyToMany(mappedBy = "items", fetch = FetchType.LAZY)
     private List<Category> categories = new ArrayList<>();
 
     public Long getId() {
