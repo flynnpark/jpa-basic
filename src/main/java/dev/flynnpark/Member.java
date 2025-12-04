@@ -14,10 +14,9 @@ public class Member extends BaseEntity {
     @Column(name = "username")
     private String username;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="team_id", insertable = false, updatable = false)
     private Team team;
-
 
     @OneToMany(mappedBy = "member")
     private List<MemberProduct> memberProducts = new ArrayList<>();
