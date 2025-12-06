@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9404eb9-7c99-4e4e-9d4d-d9ee8802589e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/flynnpark/ValueMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/flynnpark/ex1/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/flynnpark/ex1/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/flynnpark/ex1/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/flynnpark/ex1/Delivery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/flynnpark/ex1/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/flynnpark/ex1/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/flynnpark/ex1/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/flynnpark/ex1/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/flynnpark/ex1/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/flynnpark/ex1/OrderItem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,25 +47,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.JpaMain.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.JpaMain.executor": "Run",
+    "Application.ValueMain.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="dev.flynnpark.ex1" />
       <recent name="dev.flynnpark.domain" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ValueMain">
     <configuration name="JpaMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.flynnpark.JpaMain" />
       <module name="jpa-basic" />
@@ -83,8 +80,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ValueMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dev.flynnpark.ValueMain" />
+      <module name="jpa-basic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.flynnpark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ValueMain" />
         <item itemvalue="Application.JpaMain" />
       </list>
     </recent_temporary>
