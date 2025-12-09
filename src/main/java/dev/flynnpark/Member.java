@@ -2,24 +2,21 @@ package dev.flynnpark;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "member")
 public class Member extends BaseEntity {
     @Id @GeneratedValue
-    @Column(name = "member_id")
     private Long id;
 
-    @Column(name = "username")
+    @Column(name="username")
     private String username;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="team_id", insertable = false, updatable = false)
-    private Team team;
+    @Embedded private Period workPeriod;
 
-    @OneToMany(mappedBy = "member")
-    private List<MemberProduct> memberProducts = new ArrayList<>();
+    @Embedded private Address address;
 
     public Long getId() {
         return id;
@@ -37,12 +34,19 @@ public class Member extends BaseEntity {
         this.username = username;
     }
 
-    public Team getTeam() {
-        return team;
+    public Period getWorkPeriod() {
+        return workPeriod;
     }
 
-    public void setTeam(Team team) {
-        this.team = team;
-        team.getMembers().add(this);
+    public void setWorkPeriod(Period workPeriod) {
+        this.workPeriod = workPeriod;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
