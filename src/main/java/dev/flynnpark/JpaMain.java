@@ -16,18 +16,23 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Member member = new Member();
-            member.setUsername("member1");
-            Period period = new Period();
-            period.setStartDate(LocalDateTime.now());
-            period.setEndDate(LocalDateTime.now().plusYears(1));
-            member.setWorkPeriod(period);
-            Address address = new Address();
-            address.setCity("Seoul");
-            address.setStreet("Gangnam");
-            address.setZipcode("123-123");
-            member.setAddress(address);
-            em.persist(member);
+            Address address = new Address("Seoul", "Gangnam", "123-123");
+
+            Member memberA = new Member();
+            memberA.setUsername("memberA");
+            memberA.setAddress(address);
+            em.persist(memberA);
+
+            Member memberB = new Member();
+            memberB.setUsername("memberB");
+            memberB.setAddress(address);
+            em.persist(memberB);
+
+            // ...
+
+            memberA.getAddress().setCity("Busan"); // A의 주소를 변경하면 B의 주소도 변경된다.
+            // 해결책: 임베디드 타입을 변경할 때는 새로운 객체를 만들어 교체해줘야 한다.
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
