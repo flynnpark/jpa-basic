@@ -16,22 +16,10 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Address address = new Address("Seoul", "Gangnam", "123-123");
+            Address address1 = new Address("Seoul", "Gangnam", "123-123");
+            Address address2 = new Address("Seoul", "Gangnam", "123-123");
 
-            Member memberA = new Member();
-            memberA.setUsername("memberA");
-            memberA.setAddress(address);
-            em.persist(memberA);
-
-            Member memberB = new Member();
-            memberB.setUsername("memberB");
-            memberB.setAddress(address);
-            em.persist(memberB);
-
-            // ...
-
-            memberA.getAddress().setCity("Busan"); // A의 주소를 변경하면 B의 주소도 변경된다.
-            // 해결책: 임베디드 타입을 변경할 때는 새로운 객체를 만들어 교체해줘야 한다.
+            System.out.println("address1 equals address2: " + address1.equals(address2));
 
             tx.commit();
         } catch (Exception e) {
